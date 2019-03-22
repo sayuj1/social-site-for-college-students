@@ -17,7 +17,6 @@ if(!isset($_SESSION['username']))
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    
 </head>
 
 <body>
@@ -66,7 +65,7 @@ if(!isset($_SESSION['username']))
             $date2=chat_time_ago($date1);
             $post_title=$row['post_title'];
             echo ' <h1 class="ui header" style="text-align:center;font-size:50px;">My Posts</h1>
-            <div class="ui segment">
+            
             <div class="ui segments">
                     <div class="ui segment">
                      <form action="edit_post.php" method="post"><p style="text-transform:capitalize;font-size:30px;">'.$post_title.'
@@ -185,7 +184,7 @@ if(!isset($_SESSION['username']))
            }
        }                  
     ?>
-       </div>
+        <br><br>
    </div>
     
 </body>

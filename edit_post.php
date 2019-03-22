@@ -14,22 +14,37 @@ if(!isset($_SESSION['username']))
     <meta charset="UTF-8">
     <title>edit_post</title>
     <link href="css/edit_post.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
 <body>
-    <div class="edit_post_container">
-    <form method="post" action='edit_post.php'>
-            <input type="text" name="post_title1" placeholder="Your Post Title....." class="post_title">
-            <?php if(isset($_POST['edit_post']))
-            {
-            $post_id1 = $_POST['post_id'];
-            }?>
-            <input type="hidden" name="post_id1" value="<?php echo $post_id1; ?>">
-            <textarea name="post_message1" placeholder="Type Your Post Here....." rows="10" cols="64" style="padding-left:30px;padding-right:20px;padding-top:20px;border:5px dashed orange;font-size:15px;"></textarea><br>
-            <input name="submit_post1" type="submit" value="Edit" class="submit_post">
+    <div class="ui container">
+       <form action="edit_post.php" method="post" class="ui form" style="margin-top: 10%;">
+           <div class="ui grid" style="margin-left: 20%;">
+               <div class="eleven wide column">
+                   <div class="field">
+                       <label for="post_title1">
+                           <h2> Post Title: </h2>
+                       </label><br>
+                       <input type="text" name="post_title1" placeholder="Your Post Title...." required>
+                       <?php if(isset($_POST['edit_post']))
+                        {
+                        $post_id1 = $_POST['post_id'];
+                        }?>
+                        <input type="hidden" name="post_id1" value="<?php echo $post_id1; ?>">
+                   </div><br>
+                   <label for="post_message">
+                       <h2>Post:</h2>
+                   </label><br>
+                   <textarea id="" cols="30" rows="10" placeholder="Type Your Post Here...." name="post_message1" required></textarea> <br><br><br>
+                   <input type="submit" name="submit_post1" value="Edit Post" class="ui inverted blue large button">
+                   <div class="ui button red large inverted" onclick="window.location.href='post.php'">Click here to go back</div>
+               </div>
+           </div>
        </form>
-       <!--<a href="post.php" class="go_back_btn">Click here to go back</a>-->
-       <button class="go_back_btn" onclick="window.location.href='post.php'">Click here to go back</button>
-       </div> 
+    </div>
+       
        <?php 
      if(isset($_POST['submit_post1']))
       {
