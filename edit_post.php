@@ -39,7 +39,7 @@ if(!isset($_SESSION['username']))
                    </label><br>
                    <textarea id="" cols="30" rows="10" placeholder="Type Your Post Here...." name="post_message1" required></textarea> <br><br><br>
                    <input type="submit" name="submit_post1" value="Edit Post" class="ui inverted blue large button">
-                   <div class="ui button red large inverted" onclick="window.location.href='post.php'">Click here to go back</div>
+                   <div class="ui button orange large inverted" onclick="window.location.href='post.php'">Click here to go back</div>
                </div>
            </div>
        </form>

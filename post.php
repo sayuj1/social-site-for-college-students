@@ -35,6 +35,7 @@ if(!isset($_SESSION['username']))
                    </label><br>
                    <textarea id="" cols="30" rows="10" placeholder="Type Your Post Here...." name="post_message" required></textarea> <br><br><br>
                    <input type="submit" name="submit_post" value="Post" class="ui inverted blue massive button">
+                   <div class="ui button orange massive inverted" onclick="window.location.href='homepage.php'">Click here to go back</div>
                </div>
            </div>
        </form>
@@ -54,6 +55,7 @@ if(!isset($_SESSION['username']))
     }
     else
     { //echo mysqli_num_rows($result);
+        echo '<h1 class="ui header" style="text-align:center;font-size:50px;">My Posts</h1>';
         while($row=mysqli_fetch_assoc($result))
         {
             $post_id=$row['post_id'];
@@ -64,9 +66,7 @@ if(!isset($_SESSION['username']))
             $date1=$row['date'];
             $date2=chat_time_ago($date1);
             $post_title=$row['post_title'];
-            echo ' <h1 class="ui header" style="text-align:center;font-size:50px;">My Posts</h1>
-            
-            <div class="ui segments">
+            echo '<div class="ui segments">
                     <div class="ui segment">
                      <form action="edit_post.php" method="post"><p style="text-transform:capitalize;font-size:30px;">'.$post_title.'
                         <input type="submit" name="edit_post" value="Edit" class="ui green inverted button" style="float: right;"></p>
