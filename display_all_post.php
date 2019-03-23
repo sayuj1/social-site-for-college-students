@@ -17,7 +17,9 @@ if(!isset($_SESSION['username'])){
     if(mysqli_num_rows($result)==0)
     {
         echo '<br>';
-        echo '<h1 align="center">'."No Post Yet".'</h1>';
+        echo '<h1 align="center" class="ui header">
+        <div class="ui green message">You Have Not Posted Yet!
+        </div></h1>';
     }
     else
     { //echo mysqli_num_rows($result);
@@ -31,10 +33,16 @@ if(!isset($_SESSION['username'])){
             $date1=$row['date'];
             $date2=chat_time_ago($date1);
             $post_title=$row['post_title'];
-            echo '<div style="border:2px solid yellow;"><div style="margin:0px auto;width:500px;height:auto;"><form action="display_all_post.php" method="post" ><p style="text-transform:capitalize;font-size:30px;font-weight:bold">'.$post_title.'</p>'.
-            '<p style="text-transform:uppercase;font-size:15px;">Posted By: '.$fullname.'</p>'.'<p>'.$date2.'</p></div></div>';
-            echo '<div style="border:2px solid grey;"><p></p></form>';
-            echo '<div style="margin:0px auto;width:500px;"><p style="text-transform:uppercase;font-size:25px;">'.$post.'</p></div><br><br></div>'; 
+            echo '
+            <div class="ui raised segment" style="width: 95%;margin: 0px auto;">
+            <div style="margin:0px auto;width:500px;height:auto;">
+            <form action="display_all_post.php" method="post" >
+            <p style="text-transform:capitalize;font-size:30px;font-weight:bold">'.$post_title.'</p>'.
+            '<p style="text-transform:uppercase;font-size:15px;">Posted By: '.$fullname.'</p>'.'<p>'.$date2.'</p>
+            </div>';
+            echo '</form>';
+            echo '<div class="ui divider"></div>
+            <div style="margin:0px auto;width:500px;"><p style="text-transform:uppercase;font-size:25px;">'.$post.'</p></div><br><br></div>'; 
             
             $sql4="SELECT * FROM `likepage` where post_id='$post_id'";
             $result4=mysqli_query($con,$sql4);
@@ -42,7 +50,7 @@ if(!isset($_SESSION['username'])){
             
              echo '<form id="'.$post_id.'" method="post" action="likepage.php" class="ui form">
             <input type="hidden" value="'.$post_id.'" name="post_id2"><br>
-            <div class="two wide field">
+            <div class="two wide field" style="margin-left:2%;">
             <div class="ui right icon input">
             <input type="submit" id="'.$post_id.'" value="Likes" name="submit" class="ui blue large inverted button" style="font-size: 18px;">
             <i class="hand point right outline large icon"></i>
@@ -52,7 +60,7 @@ if(!isset($_SESSION['username'])){
             </form><br><br>';
             echo '<div class="comment_box"><form action="display_all_post.php" method="post" class="ui form">
             <div class="inline field">
-            <input type="text" name="comment_msg" style="width: 40%;">
+            <input type="text" name="comment_msg" style="width: 40%;margin-left:2%;">
             <div class="ui right icon input">
             <input type="submit" value="Comment" name="comment_sbmt" class="ui large purple inverted button" style="width:30%;">
             <i class = "comment large icon"></i>
@@ -67,14 +75,14 @@ if(!isset($_SESSION['username'])){
             if(mysqli_num_rows($result1)==0)
             {echo '<div class="'.$post_id.'" style="display:none;">';
                 echo '<br>';
-               echo '<h6 align="center">'."No Comments Yet".'</h1>';
+               echo '<h2 align="center">'."No Comments Yet!".'</h2>';
              echo '</div>';
             }
 
             // fetching comments 
-            echo '<div style="max-height:200px;overflow-y:auto;">'; //Comment Container
+            echo '<div style="max-height:500px;overflow-y:auto;">'; //Comment Container
             while($row1=mysqli_fetch_assoc($result1))
-            {
+            {  
                 $comment_msg=$row1['comment'];
                 $username=$row1['username'];
                 $fullname=$row1['fullname'];
@@ -82,12 +90,14 @@ if(!isset($_SESSION['username'])){
                require_once 'timestamp.php';
                $date2=$row1['date'];
                $date2=chat_time_ago($date2); 
-                echo '<div class="'.$post_id.'" id="'.$post_id.'" style="display:none;">'.'<div><p style="text-transform:uppercase;font-size:15px;">'.$fullname.': '.$comment_msg.'</p>'.'<p>'.$date2.'</p></div><br><br></div>'; 
+                echo '
+                <div class="'.$post_id.' ui segment" id="'.$post_id.'" style="display:none;width: 80%;margin-left: 5%;">'.'<div><p style="text-transform:uppercase;font-size:15px;">'.$fullname.': '.$comment_msg.'</p>'.'<p>'.$date2.'</p></div><br><br></div>'; 
             }
              echo '</div>';
-             // echo ''.$post_id.'<input type="button" onclick="open_div()" class="c-btn" id="'.$post_id.'" style="float:right;" value="Show me">'; //this button will show hide comments
-            echo '<button id="'.$post_id.'" style="float:right;">show me</button>';
-            echo '<br><br><br>';
+            echo '<button id="'.$post_id.'" style="float:right;" class="ui button large">show me</button>';
+            echo '<br><br><br>
+            <div class="ui divider" style="width: 98%;"></div>
+            <br><br>';
             
         }
         

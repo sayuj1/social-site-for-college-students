@@ -5,6 +5,7 @@ if(!isset($_SESSION['username']))
 {
 	header("location:index.php");
 }
+
 ?>
 
 
@@ -168,16 +169,14 @@ if(!isset($_SESSION['username']))
 	    
 		<div class="middle_body">
 	        
-	            <div id="show_post" style="width: 50%;overflow-y: auto;" class="ui segment">
+	            <div id="show_post" style="width: 50%;overflow-y: auto;" class="ui segment ">
                     
                         
-<!-- ++++++++++++++++++++++++++++++ Displaying Post ++++++++++++++++++++++++++++++++++++++++  -->
+<!-- ++++++++++++++++++++++++++++++ Displaying Post / Search Results++++++++++++++++++++++++++++++++++++++++  -->
           
                
 <!-- ++++++++++++++++++++++++++++++Displaying Post End ++++++++++++++++++++++++++++++++++++++++  --> 
                 </div>
-	        
-	        
 	        <div class="users_display">
 	            <div class="online_users">
                     <p align="center" style="font-size:35px;"><b> Friend Lists</b> </p><br><hr>
