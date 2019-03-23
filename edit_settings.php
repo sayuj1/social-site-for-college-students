@@ -100,7 +100,6 @@ else
 <html>
   <head>
     <title> Profile </title>
-	<link rel="stylesheet" type="text/css" href="css/edit_settings.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
@@ -157,14 +156,14 @@ else
                   <div class="field" style="margin: 0 auto;font-size: 15px;">
                       <div class="ui right icon input">
                           <input type="file" id="imglink" name="imglink" accept=".jpg, .jpeg, .png" onchange="PreviewImage();" class="ui green label" /> 
-                          <i class="right large arrow icon"></i>
+                          <i class="upload large arrow icon"></i>
                       </div>
                   </div>
                   <div class="row" style="margin-top: 5%;">
                       <div class="inline field" style="margin: 0 auto;font-size: 20px;">
                         <input type="text" value="Fullname" class="ui label" disabled>
                         <input name="fullname" type="text" pattern=".{3,20}" required title="Name Should Contain atleast 3 letters" value="<?php echo $fullname;?>">
-                      </div>
+                      </div>  
                   </div>
                   <div class="row" style="margin-top: 1%;">
                       <div class="inline field" style="margin: 0 auto;font-size: 20px;">

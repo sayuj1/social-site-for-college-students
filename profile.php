@@ -32,7 +32,6 @@ else
   <body>
       <div class="ui container" style="margin-top: 5%;">
           <div class="ui raised segment">
-          
       <form action="profile.php" method="post" class="ui form">
           <div class="ui grid">
                 <div class="row">

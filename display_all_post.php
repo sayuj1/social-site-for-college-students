@@ -34,20 +34,30 @@ if(!isset($_SESSION['username'])){
             echo '<div style="border:2px solid yellow;"><div style="margin:0px auto;width:500px;height:auto;"><form action="display_all_post.php" method="post" ><p style="text-transform:capitalize;font-size:30px;font-weight:bold">'.$post_title.'</p>'.
             '<p style="text-transform:uppercase;font-size:15px;">Posted By: '.$fullname.'</p>'.'<p>'.$date2.'</p></div></div>';
             echo '<div style="border:2px solid grey;"><p></p></form>';
-            echo '<div style="margin:0px auto;width:500px;height:auto;"><p style="text-transform:uppercase;font-size:25px;">'.$post.'</p></div><br><br></div>'; 
+            echo '<div style="margin:0px auto;width:500px;"><p style="text-transform:uppercase;font-size:25px;">'.$post.'</p></div><br><br></div>'; 
             
             $sql4="SELECT * FROM `likepage` where post_id='$post_id'";
             $result4=mysqli_query($con,$sql4);
             $count=mysqli_num_rows($result4);
             
-             echo '<form id="'.$post_id.'" method="post" action="likepage.php">
-            <input type="hidden" value="'.$post_id.'" name="post_id2">
-            <input type="submit" id="'.$post_id.'" value="Likes" name="submit" class="like_btn"><div class="like_count">'.$count.'</div></form><br><br>';
-            
-            
-            echo '<div class="comment_box"><form action="display_all_post.php" method="post">
-            <input type="text" name="comment_msg">
-            <input type="submit" value="comment" name="comment_sbmt">
+             echo '<form id="'.$post_id.'" method="post" action="likepage.php" class="ui form">
+            <input type="hidden" value="'.$post_id.'" name="post_id2"><br>
+            <div class="two wide field">
+            <div class="ui right icon input">
+            <input type="submit" id="'.$post_id.'" value="Likes" name="submit" class="ui blue large inverted button" style="font-size: 18px;">
+            <i class="hand point right outline large icon"></i>
+            <span style="font-size:30px;margin-top: 15%;">'.$count.'</span>
+            </div>
+            </div>
+            </form><br><br>';
+            echo '<div class="comment_box"><form action="display_all_post.php" method="post" class="ui form">
+            <div class="inline field">
+            <input type="text" name="comment_msg" style="width: 40%;">
+            <div class="ui right icon input">
+            <input type="submit" value="Comment" name="comment_sbmt" class="ui large purple inverted button" style="width:30%;">
+            <i class = "comment large icon"></i>
+            </div>
+            </div>
             <input type="hidden" value="'.$post_id.'" name="post_id1">
             </form></div>';
             
@@ -159,8 +169,15 @@ if(!isset($_SESSION['username'])){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-<link href="css/display_all_post.css" rel="stylesheet" type="text/css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <link href="css/display_all_post.css" rel="stylesheet" type="text/css">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
 </head>
 <body>
          <script>

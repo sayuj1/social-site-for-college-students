@@ -24,7 +24,6 @@ if(!isset($_SESSION['username']))
 			
 			function refresh()
 			{
-				
 				setTimeout(function() {
 					$('#total_user').load('online_users.php');
 					refresh();

@@ -19,10 +19,15 @@ if(!isset($_SESSION['username']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/newhomepage.css" type="text/css" rel="stylesheet">
+    
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="css/homepage_navbar.css">
     <link rel="stylesheet" type="text/css" href="css/notificationdropdown.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
 <body onload="loadpost()">
    <script>
@@ -41,14 +46,6 @@ if(!isset($_SESSION['username']))
        
         </script>
        
-    <!--<script>
-		$(document).ready(function() {
-			$('#show_post').load('display_all_post.php')
-			setInterval(function () {
-				$('#show_post').load('display_all_post.php')
-			}, 60000);
-		});
-	</script> -->
 	<div id="main">
    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++ Nav Bar++++++++++++++++++++++++++++++++++  -->
 	    
@@ -170,15 +167,16 @@ if(!isset($_SESSION['username']))
 	    </div>
 	    
 		<div class="middle_body">
-	        <div class="post_body">
-	            <div id="show_post">
+	        
+	            <div id="show_post" style="width: 50%;overflow-y: auto;" class="ui segment">
+                    
                         
 <!-- ++++++++++++++++++++++++++++++ Displaying Post ++++++++++++++++++++++++++++++++++++++++  -->
           
                
 <!-- ++++++++++++++++++++++++++++++Displaying Post End ++++++++++++++++++++++++++++++++++++++++  --> 
                 </div>
-	        </div>
+	        
 	        
 	        <div class="users_display">
 	            <div class="online_users">
