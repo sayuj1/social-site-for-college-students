@@ -21,7 +21,8 @@ if(!isset($_SESSION['username']))
 
 <body>
    <div class="ui container">
-       <form action="post.php" method="post" class="ui form" style="margin-top: 10%;">
+       <div class="ui raised segment" style="margin-top: 2%;">
+        <form action="post.php" method="post" class="ui form" style="margin-top: 2%;margin-bottom: 2%;">
            <div class="ui grid" style="margin-left: 20%;">
                <div class="eleven wide column">
                    <div class="field">
@@ -34,11 +35,16 @@ if(!isset($_SESSION['username']))
                        <h2>Post:</h2>
                    </label><br>
                    <textarea id="" cols="30" rows="10" placeholder="Type Your Post Here...." name="post_message" required></textarea> <br><br><br>
+                   <div class="ui right icon input">
                    <input type="submit" name="submit_post" value="Post" class="ui inverted blue massive button">
-                   <div class="ui button orange massive inverted" onclick="window.location.href='homepage.php'">Click here to go back</div>
+                   <i class="write large blue icon"></i>
+                       </div>
+                   <div class="ui button orange massive inverted" onclick="window.location.href='homepage.php'" style="margin-left: 2%;">Click here to go back</div>
                </div>
            </div>
        </form>
+       </div>
+      
        <br><br>
       <div class="ui divider"></div> <br><br>
        

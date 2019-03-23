@@ -41,13 +41,15 @@ if($count=="0"){
  $result3 = mysqli_query($con1,$sql3); 
  $count_user_online = mysqli_num_rows($result3); //counting total users
  echo "<b style='font-size:1.5em;'><center>Total Users Online :  $count_user_online </center></b><br>"; 
- 
  $query2="select session from `online_users` where session!='$session'";
  $result_query2=mysqli_query($con1,$query2);
  $no_of_user=$count_user_online;
  if($result)
  {
   echo "<div class='ui segment' style='text-transform: capitalize;font-size: 1em;max-height: 50%;overflow:hidden;overflow-y: scroll;text-align: center;'>";
+     if($no_of_user == "0"){
+         echo "<b style='font-size:1.5em;'><center>No User Online!</center></b><br>"; 
+     }
  while($row=mysqli_fetch_row($result_query2))
  {
      
