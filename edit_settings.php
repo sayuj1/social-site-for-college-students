@@ -155,7 +155,7 @@ else
               <form action="edit_settings.php" method="post" enctype="multipart/form-data" class="ui form" style="margin: 0 auto;">
                   <div class="field" style="margin: 0 auto;font-size: 15px;">
                       <div class="ui right icon input">
-                          <input type="file" id="imglink" name="imglink" accept=".jpg, .jpeg, .png" onchange="PreviewImage();" class="ui green label" /> 
+                          <input type="file" id="imglink" name="imglink" accept=".jpg, .jpeg, .png" onchange="PreviewImage();" class="ui green label"/> 
                           <i class="upload large arrow icon"></i>
                       </div>
                   </div>

@@ -18,7 +18,7 @@ if(!isset($_SESSION['username'])){
     {
         echo '<br>';
         echo '<h1 align="center" class="ui header">
-        <div class="ui green message">You Have Not Posted Yet!
+        <div class="ui blue message">You Have Not Posted Yet!
         </div></h1>';
     }
     else
@@ -35,14 +35,14 @@ if(!isset($_SESSION['username'])){
             $post_title=$row['post_title'];
             echo '
             <div class="ui raised segment" style="width: 95%;margin: 0px auto;">
-            <div style="margin:0px auto;width:500px;height:auto;">
+            <div style="margin-left: 4%;;width:500px;height:auto;">
             <form action="display_all_post.php" method="post" >
             <p style="text-transform:capitalize;font-size:30px;font-weight:bold">'.$post_title.'</p>'.
             '<p style="text-transform:uppercase;font-size:15px;">Posted By: '.$fullname.'</p>'.'<p>'.$date2.'</p>
             </div>';
             echo '</form>';
             echo '<div class="ui divider"></div>
-            <div style="margin:0px auto;width:500px;"><p style="text-transform:uppercase;font-size:25px;">'.$post.'</p></div><br><br></div>'; 
+            <div style="margin-left: 4%;width:500px;"><p style="text-transform:uppercase;font-size:25px;">'.$post.'</p></div><br><br></div>'; 
             
             $sql4="SELECT * FROM `likepage` where post_id='$post_id'";
             $result4=mysqli_query($con,$sql4);
@@ -50,21 +50,15 @@ if(!isset($_SESSION['username'])){
             
              echo '<form id="'.$post_id.'" method="post" action="likepage.php" class="ui form">
             <input type="hidden" value="'.$post_id.'" name="post_id2"><br>
-            <div class="two wide field" style="margin-left:2%;">
-            <div class="ui right icon input">
-            <input type="submit" id="'.$post_id.'" value="Likes" name="submit" class="ui blue large inverted button" style="font-size: 18px;">
-            <i class="hand point right outline large icon"></i>
+            <div class="two wide field" style="margin-left:3%;">
+            <input type="submit" id="'.$post_id.'" value="Like" name="submit" class="ui blue large inverted button" style="font-size: 18px;">
             <span style="font-size:30px;margin-top: 15%;">'.$count.'</span>
-            </div>
             </div>
             </form><br><br>';
             echo '<div class="comment_box"><form action="display_all_post.php" method="post" class="ui form">
             <div class="inline field">
-            <input type="text" name="comment_msg" style="width: 40%;margin-left:2%;">
-            <div class="ui right icon input">
-            <input type="submit" value="Comment" name="comment_sbmt" class="ui large purple inverted button" style="width:30%;">
-            <i class = "comment large icon"></i>
-            </div>
+            <input type="text" placeholder="Type Your Comment..." name="comment_msg" style="width: 40%;margin-left:2%;">
+            <input type="submit" value="Comment" name="comment_sbmt" class="ui large purple inverted large button" style="width:20%;">            
             </div>
             <input type="hidden" value="'.$post_id.'" name="post_id1">
             </form></div>';

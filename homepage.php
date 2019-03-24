@@ -14,16 +14,9 @@ if(!isset($_SESSION['username']))
 <head>
    <title>homepage</title>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/newhomepage.css" type="text/css" rel="stylesheet">
-    
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" type="text/css" href="css/homepage_navbar.css">
     <link rel="stylesheet" type="text/css" href="css/notificationdropdown.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
@@ -46,100 +39,11 @@ if(!isset($_SESSION['username']))
             }
        
         </script>
-       
-	<div id="main">
-   <!--++++++++++++++++++++++++++++++++++++++++++++++++++++ Nav Bar++++++++++++++++++++++++++++++++++  -->
-	    
-    <div class="navbar">
-<div class="dropdown">
-    <button class="dropbtn" onclick="myFunction()">Settings
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content" id="myDropdown">
-      <a href="profile.php">View Profile</a>
-      <a href="edit_settings.php">Edit Settings</a>
-      <hr style="border: 1px ridge grey;">
-      <a href="logout.php">Logout</a>
-    </div>
-  </div> 
- <a href="profile.php">About Me</a>
-
-   <!-- for notification -->
-                                      <!-- start -->
-
-        <div class="dropdown">
-              <button onclick="myFunctionnotification()" class="dropbtn db_notification dropdown-togglenotification">
-                 <span class="countnotification"> </span> Notifications
-              </button>
-                <div id="myDropdownnotification" class="dropdown-content d_not dropdown-menunotification"></div>
-        </div>
-
-
-                                       <!-- end -->
-
- <div class="dropdown">
-    <button class="dropbtn" onclick="myFunction1()">Chat
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content" id="myDropdown1">
-      <a href="#">Private Chat</a>
-      <a href="#">Group Chat</a>
-      <a href="messagepage.php">Global Chat</a>
-    </div>
-  </div>
- 
-  <a href="post.php">Post</a>
-  
-  <div class="dropdown">
-    <button class="dropbtn" onclick="myFunction2()">Friend Request
-    <?php
-        $username1 = $_SESSION['username'];
-        $qqq = "SELECT * FROM `friendrequest` WHERE receiver='$username1' AND seen='0'";
-       $result1=mysqli_query($con,$qqq);
-       if(mysqli_num_rows($result1)>0)
-       {
-           $count_friends=mysqli_num_rows($result1);
-           echo $count_friends;  
-       }
-    ?>
-    </button>
-    
-    <div class="friend-request-content" id="myDropdown2">
-    
-    </div>
-  </div>
-<!--   <a href="#">Friend Request
-   
-   </a> -->
-   <a href="homepage.php">Home</a>
-   <label style="color:white;margin-left:2%;">Search</label>
-   <input type="text" name="search_text" id="search_text" placeholder="Search..." style="margin-top: 1%;margin-left: 2%; height: 25px;width: 290px;border: 1px solid black;">
-  <a href="#" style="width:120px;"><?php //echo '<img width="40px" height="40px" style="border-radius:50%;margin-top:-5px;" src="'.$_SESSION['imglink'].'">';?><img width="40px" height="40px" style="border-radius:50%;margin-top:-5px;" src="<?php 
-               $q1='SELECT * from `user` WHERE username="'.$_SESSION['username'].'"';
-                $result=mysqli_query($con,$q1);
-                $row=mysqli_fetch_assoc($result);
-                    if($row['imagelink']=="uploads/")
-                    {
-                        if($row['gender']=="male")
-                        {
-                            echo "imgs/male1.png";
-                        }
-                        else if($row['gender']=="female")
-                        {
-                            echo "imgs/female.png";
-                        }
-                    }
-                     else
-                     {
-                         echo $row['imagelink'];
-                     }                                                              
-               ?>"><p style="padding-left: 5px;margin-top:-38px;margin-left:78px;text-transform:capitalize;"><?php echo($_SESSION['fullname'])?></p></a>
-</div>
-    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++ Nav Bar End++++++++++++++++++++++++++++++++++  -->
-	    <div class="header">
-	        <div class="photo">
-	            <?php // echo '<img alt="Upload Photo" class="image" width="148px" height="160px" src="'.$_SESSION['imglink'].'">';?> 
-	           <img alt="Upload Photo" class="image" width="148px" height="160px" src="<?php 
+       <?php include 'navbar.php' ?>   
+    <div class="ui segment grid" style="width:90%;margin-left:5%;margin-top:1%;background-color: whitesmoke;">
+       <div class="ui row">
+           <div class="ui four wide column" style="margin-top: 1%;margin-left: 5%;">
+               <img style="width:180px; height: 180px;" class="ui rounded bordered segment purple tiny image" src="<?php 
                $q1='SELECT * from `user` WHERE username="'.$_SESSION['username'].'"';
                 $result=mysqli_query($con,$q1);
                 $row=mysqli_fetch_assoc($result);
@@ -159,17 +63,17 @@ if(!isset($_SESSION['username']))
                          echo $row['imagelink'];
                      }                                                              
                ?>">
-	        </div>
-	        <div class="welcome_message">
-	            <b>
-                 Welcome <?php echo ($_SESSION['fullname'])?>
-                </b>
-	        </div>
-	    </div>
-	    
-		<div class="middle_body">
-	        
-	            <div id="show_post" style="width: 50%;overflow-y: auto;" class="ui segment ">
+           </div>
+            <div class="ui ten wide column">
+                <div class="ui header" style="font-size: 60px;margin-top:4%;margin-left:5%;text-transform: Capitalize;">
+                    Welcome <?php echo ($_SESSION['fullname'])?>
+                </div> 
+            </div>
+       </div>
+       
+    </div>
+    
+	     <div id="show_post" style="width: 50%;overflow-y: auto;float: left;margin-left:5%;" class="ui segment">
                     
                         
 <!-- ++++++++++++++++++++++++++++++ Displaying Post / Search Results++++++++++++++++++++++++++++++++++++++++  -->
@@ -177,17 +81,21 @@ if(!isset($_SESSION['username']))
                
 <!-- ++++++++++++++++++++++++++++++Displaying Post End ++++++++++++++++++++++++++++++++++++++++  --> 
                 </div>
-	        <div class="users_display">
-	            <div class="online_users">
-                    <p align="center" style="font-size:35px;"><b> Friend Lists</b> </p><br><hr>
-                    <?php 
+        
+                <div class="ui huge segment raised header" style="float: left;margin-left: 20%;text-align: center;width: 20%;height: auto;font-size:2.0rem;">
+                   Friend Lists
+                    <div class="ui grid" style="margin-top: 2%;">
+                        <div class="ui row" style="text-align:center;">
+                           
+                                 <?php 
                     $q="SELECT * FROM `friends` WHERE user='".$_SESSION['username']."'";
                     $r=mysqli_query($con,$q);
                     if(mysqli_num_rows($r)>0)
                     {
                         while($rr=mysqli_fetch_assoc($r))
                         {
-                            echo '<center style="font-size:25px;">'.$rr['friendname'].'</center><hr><br>';
+                            echo '<div class="ui thirteen wide column" style="margin:0px auto;">
+                            <div class="ui segment" style="font-size:1.5rem;text-transform: Capitalize;">'.$rr['friendname'].'</div></div>';
                         }
                     }
                     $qq="SELECT * FROM `friends` WHERE  friendname='".$_SESSION['username']."'";
@@ -196,20 +104,25 @@ if(!isset($_SESSION['username']))
                     {
                        while($rr=mysqli_fetch_assoc($rrr))
                         {
-                            echo '<center style="font-size:25px;">'.$rr['user'].'</center><hr><br>';
+                           echo '<div class="ui thirteen wide column" style="margin:0px auto;">
+                            <div class="ui segment" style="font-size:1.5rem;text-transform: Capitalize;">'.$rr['user'].'</div></div>';
                         } 
                     }
                     else if(mysqli_num_rows($r)==0 and mysqli_num_rows($rrr)==0)
                     {
-                        echo '<center style="font-size:25px;">You Have No Friends</center>';
+                        echo '<div class="ui thirteen wide column" style="margin:0px auto;">
+                            <div class="ui" style="font-size:1.3rem;text-transform: Capitalize;">
+                            <div class="ui teal message">You Have No Friends!</div></div></div>';
                     }
                     
     
                     ?>
+                           
+                        </div>
                     </div>
-	        </div>
-	    </div>
-	 </div>
+                </div>
+	    
+	 
 <!-- For fetching Search User information -->	 
 <script>
     $(document).ready(function(){
@@ -290,78 +203,11 @@ if(!isset($_SESSION['username']))
 
 
 </script>
-<!-- For fetching Search User information End -->    
-<!--+++++++++++++++++ Navbar js ++++++++++++++++++++++++++++++++++-->
-
-<script type="text/javascript">
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-    function myFunction2(){
-        document.getElementById("myDropdown2").classList.toggle("show1");
-    }
-function myFunction1() {
-    document.getElementById("myDropdown1").classList.toggle("show1");
-   
-}
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-//======================= FOR NOTIFICATION=================================================
-                /*            When the user clicks on the button, 
-                  toggle between hiding and showing the dropdown content     */
-           function myFunctionnotification()
-          {
-          document.getElementById("myDropdownnotification").classList.toggle("shownotification");
-          }
-              // Close the dropdown if the user clicks outside of it
-              window.onclick = function(event) 
-              {
-                if (!event.target.matches('.db_notification'))
-                 {
-                  var dropdowns = document.getElementsByClassName("d_not");
-                  // var i;
-                  // for (i = 0; i < dropdowns.length; i++) 
-                  // {
-                  //   var openDropdown = dropdowns[i];
-                  //   if (openDropdown.classList.contains('shownotification'))
-                  //    {
-                  //     openDropdown.classList.remove('shownotification');
-                  //     }
-                  // }
-
-                  if (dropdowns.classList.contains('shownotification'))
-                   {
-                    dropdowns.classList.remove('shownotification');
-                   }
-                }
-              }
-//===========================================================================================
-
-
-   
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-    var myDropdown = document.getElementById("myDropdown");
-      var myDropdown1 = document.getElementById("myDropdown1");
-      var myDropdown2 = document.getElementById("myDropdown2");
-      if (myDropdown.classList.contains('show')) {
-        myDropdown.classList.remove('show');
-      }
-      if (myDropdown1.classList.contains('show1')) {
-        myDropdown1.classList.remove('show1');
-      }
-      if(myDropdown2.classList.contains('show1')){
-          myDropdown2.classList.remove('show1');
-      }
-  }
-}
-<!--+++++++++++++++++ Navbar js End++++++++++++++++++++++++++++++++++-->
 </script>
 <script>
     $(document).ready(function(){
         $("#myDropdown2").load('friend_request1.php');
+        $('.ui.dropdown').dropdown();
     });
     </script>	 
 </body>

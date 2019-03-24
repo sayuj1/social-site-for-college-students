@@ -9,6 +9,9 @@ require 'dbconfig/config.php';
     <title> Login page </title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/login_slide.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
    </head>
 
 <body style="background-color:#96ceb4;">
@@ -33,23 +36,25 @@ require 'dbconfig/config.php';
         </div>
         <div id="top">
             <center>
-                <p>Welcome To the Social Site </p>
+                <p></p>
             </center>
         </div>
-        <div id="main" class="main_login">
+        <div class="ui label" style="margin-left: 40%;margin-top: 5%;">
             <center>
                 <h2> Login Page </h2>
                 <img src="imgs/login.png" class="login-img">
             </center>
 
-            <form class="myform" action="index.php" method="post">
-                <i class="fa fa-user"><label style="font-size: 22px"><b> Username:</b></label></i><br>
-                <input name="username" type="text" class="inputvalues" placeholder="Username" required><br>
-                <i class="fa fa-key"><label style="font-size: 22px"><b> Password:</b></label></i><br>
+            <form class="myform ui form" action="index.php" method="post">
+               
+                <label for="username" style="font-size: 22px;font-weight: bold;"> Username:</label><br>
+                <input name="username" type="text" class="inputvalues" placeholder="Username" required><br><br><br>
+                <label style="font-size: 22px"><b> Password:</b></label>
                 <input name="password" type="password" id="pass1" class="inputvalues" placeholder="Password" required><br>
                 <p id="warning">WARNING! Caps lock is ON.</p>
-                <input name="login" type="submit" class="login_btn" value="Login"><br>
-                <a href="register.php"><input type="button" class="register_btn" value="Register"></a>
+                <input name="login" type="submit" class="ui green inverted fluid large button" value="Login" style="margin-top: 5%;"><br>
+                <a href="register.php">
+                <input type="button" class="ui blue inverted fluid large button" value="Register"></a>
 
             </form>
             <?php
