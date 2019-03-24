@@ -8,38 +8,17 @@ require 'dbconfig/config.php';
 <head>
     <title> Login page </title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/login_slide.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
    </head>
 
 <body style="background-color:#96ceb4;">
-    <!--#718093 -->
-    <div id="whole_body">
-        <div id="hit_me">
-            <a href="#" onclick="slideopen()">
-                <svg width="30px" height="30px">
-                    <path d="M0,5 30,15" stroke="white" stroke-width="5" />
-                    <path d="M0,23 30,15" stroke="white" stroke-width="5" />
-                </svg></a>
+        <div class="ui container">
+              <div class="ui huge label" style="float:left;margin-left: 40%;margin-top: 15%;width: 42%;text-align: center;">
+            Welcome To the Social Site 
         </div>
-
-        <div id="left_slide">
-            <div id="btn_close">
-                <a href="#" onclick="slideclose()" style="text-decoration:none; color:#f9ccac;">&times;
-                </a>
-            </div>
-            <div id="about_developer">
-                <a href="#" style="text-decoration:none; color: #f9ccac;">About Developer</a>
-            </div>
-        </div>
-        <div id="top">
-            <center>
-                <p></p>
-            </center>
-        </div>
-        <div class="ui label" style="margin-left: 40%;margin-top: 5%;">
+        <div class="ui label" style="margin-left: 40%;margin-top: 1%;">
             <center>
                 <h2> Login Page </h2>
                 <img src="imgs/login.png" class="login-img">
@@ -89,7 +68,8 @@ require 'dbconfig/config.php';
 ?>
 
         </div>
-    </div>
+        </div>
+      
     <!-- For CapsLock -->
     <script>
         var input = document.getElementById("pass1");
@@ -109,17 +89,6 @@ require 'dbconfig/config.php';
     </script>
 
     <!-- ------------------------------------  -->
-    <script type="text/javascript">
-        function slideopen() {
-            document.getElementById('left_slide').style.width = '110px';
-            document.getElementById('hit_me').style.marginLeft = '110px';
-        }
-
-        function slideclose() {
-            document.getElementById('left_slide').style.width = '0px';
-            document.getElementById('hit_me').style.marginLeft = '0px';
-        }
-    </script>
 </body>
 
 </html>
