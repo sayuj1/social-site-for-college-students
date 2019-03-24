@@ -16,39 +16,39 @@ if(!isset($_SESSION['username']))
     <link rel="stylesheet" href="css/post.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
 
 <body>
-   <div class="ui container">
-       <div class="ui raised segment" style="margin-top: 2%;">
-        <form action="post.php" method="post" class="ui form" style="margin-top: 2%;margin-bottom: 2%;">
-           <div class="ui grid" style="margin-left: 20%;">
-               <div class="eleven wide column">
-                   <div class="field">
-                       <label for="post_title">
-                           <h2> Post Title: </h2>
-                       </label><br>
-                       <input type="text" name="post_title" placeholder="Your Post Title...." required>
-                   </div><br>
-                   <label for="post_message">
-                       <h2>Post:</h2>
-                   </label><br>
-                   <textarea id="" cols="30" rows="10" placeholder="Type Your Post Here...." name="post_message" required></textarea> <br><br><br>
-                   <div class="ui right icon input">
-                   <input type="submit" name="submit_post" value="Post" class="ui inverted blue massive button">
-                   <i class="write large blue icon"></i>
-                       </div>
-                   <div class="ui button orange massive inverted" onclick="window.location.href='homepage.php'" style="margin-left: 2%;">Click here to go back</div>
-               </div>
-           </div>
-       </form>
-       </div>
-      
-       <br><br>
-      <div class="ui divider"></div> <br><br>
-       
-             <?php 
+    <div class="ui container">
+        <div class="ui raised segment" style="margin-top: 2%;">
+            <form action="post.php" method="post" class="ui form" style="margin-top: 2%;margin-bottom: 2%;">
+                <div class="ui grid" style="margin-left: 20%;">
+                    <div class="eleven wide column">
+                        <div class="field">
+                            <label for="post_title">
+                                <h2> Post Title: </h2>
+                            </label><br>
+                            <input type="text" name="post_title" placeholder="Your Post Title...." required>
+                        </div><br>
+                        <label for="post_message">
+                            <h2>Post:</h2>
+                        </label><br>
+                        <textarea id="" cols="30" rows="10" placeholder="Type Your Post Here...." name="post_message" required></textarea> <br><br><br>
+                        <div class="ui right icon input">
+                            <input type="submit" name="submit_post" value="Post" class="ui inverted blue massive button">
+                            <i class="write large blue icon"></i>
+                        </div>
+                        <div class="ui button orange massive inverted" onclick="window.location.href='homepage.php'" style="margin-left: 2%;">Click here to go back</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <br><br>
+        <div class="ui divider"></div> <br><br>
+
+        <?php 
     
     $username=$_SESSION['username'];
     $fullname=$_SESSION['fullname'];
@@ -191,8 +191,8 @@ if(!isset($_SESSION['username']))
        }                  
     ?>
         <br><br>
-   </div>
-    
+    </div>
+
 </body>
 
 </html>

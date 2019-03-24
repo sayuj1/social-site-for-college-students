@@ -1,5 +1,4 @@
-
-   <?php 
+<?php 
     
 	session_start();
    require 'dbconfig/config.php';
@@ -161,68 +160,64 @@ if(!isset($_SESSION['username'])){
               }
 	
 	?>
-	
+
 <!DOCTYPE html>
 <html>
+
 <head>
-<title> Post Display </title>
- <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title> Post Display </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link href="css/display_all_post.css" rel="stylesheet" type="text/css">
-    
-    
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 
 </head>
-<body>
-         <script>
-             $("form :button").click(function(){
-                //alert("clicked");
-                 var current_id=$(this).attr('id'); //getting current like button id
-                // alert(current_id);
-                 var form_id = $(this).closest("form [id]").attr('id'); //for getting form id
-                // console.log(form_id);
-                  $.post($("#"+form_id).attr("action"), $("#"+form_id+" :input").serialize(), function(info){ 
-                      //console.log(info); 
-                    });
-                 
- 
-                });
-             
-            
-             
-             $("button").click(function(){
-                // alert(this.id);
-                 var a=this.id;
-               var elems= document.getElementsByClassName(a);
-                 //console.log(elems);
-                for (var i=0;i<elems.length;i+=1){ 
-                     if(elems[i].style.display == 'block')
-                    {
-                     //elem1[i].value='Show me';
-                     elems[i].style.display = 'none';
-                 }
-          else
-         {  
-        //elem1[i].value='Hide me';
-           elems[i].style.display = 'block';
-          }
-            }
-                    
-             });
-  
-  </script> 
-  </body>
-  </html>
-   
 
-   
+<body>
+    <script>
+        $("form :button").click(function() {
+            //alert("clicked");
+            var current_id = $(this).attr('id'); //getting current like button id
+            // alert(current_id);
+            var form_id = $(this).closest("form [id]").attr('id'); //for getting form id
+            // console.log(form_id);
+            $.post($("#" + form_id).attr("action"), $("#" + form_id + " :input").serialize(), function(info) {
+                //console.log(info); 
+            });
+
+
+        });
+
+
+
+        $("button").click(function() {
+            // alert(this.id);
+            var a = this.id;
+            var elems = document.getElementsByClassName(a);
+            //console.log(elems);
+            for (var i = 0; i < elems.length; i += 1) {
+                if (elems[i].style.display == 'block') {
+                    //elem1[i].value='Show me';
+                    elems[i].style.display = 'none';
+                } else {
+                    //elem1[i].value='Hide me';
+                    elems[i].style.display = 'block';
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>

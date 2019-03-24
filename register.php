@@ -24,44 +24,44 @@
 
 <body style="background-color:#96ceb4;">
     <form class="myform ui form" action="register.php" method="post" enctype="multipart/form-data">
-        <div id="main">
+        <div id="main" class="ui segment raised">
             <center>
                 <h2> Register Page </h2>
                 <img id="uploadPreview" src="imgs/login.png" class="login-img"><br><br>
                 <div class="ui field">
-                   <div class="ui input icon right">
-                      <input type="file" id="imglink" name="imglink" accept=".jpg, .jpeg, .png" onchange="PreviewImage();" class="ui green label" />
-                    <i class="upload large icon"></i>
-                   </div>
-                </div> 
+                    <div class="ui input icon right">
+                        <input type="file" id="imglink" name="imglink" accept=".jpg, .jpeg, .png" onchange="PreviewImage();" class="ui green label" />
+                        <i class="upload large icon"></i>
+                    </div>
+                </div>
             </center>
             <div class="ui field" style="margin-top: 10px;">
                 <label style="font-size: 18px;"><b>Fullname:</label><br>
                 <input name="fullname" type="text" class="inputvalues" pattern=".{3,20}" required title="Name Should Contain atleast 3 letters" placeholder="Fullname" required>
             </div>
             <div class="ui field">
-                 <label style="font-size: 18px"><b>Gender:</label><br>
-            <input name="gender" type="radio" class="radiobtn" value='male' checked>Male
-            <input name="gender" type="radio" class="radiobtn" value='female'>Female
+                <label style="font-size: 18px"><b>Gender:</label><br>
+                <input name="gender" type="radio" class="radiobtn" value='male' checked>Male
+                <input name="gender" type="radio" class="radiobtn" value='female'>Female
             </div>
-           <div class="ui field">
+            <div class="ui field">
                 <label style="font-size: 18px"><b>Username:</label><br>
-                 <input name="username" type="text" class="inputvalues" placeholder="Username" required>
-           </div>
-           <div class="ui field">
-               <label style="font-size: 18px"><b>Password:</label><br>
-            <input name="password" type="password" id="pass1" class="inputvalues" placeholder="Password" required><br>
-            <p id="warning1">WARNING! Caps lock is ON</p>
-           </div>
-           <div class="ui field">
-               <label style="font-size: 18px">Confirm Password</label><br>
-            <input name="cpassword" type="password" id="pass2" class="inputvalues" placeholder="Confirm Password"><br>
-            <p id="warning2">WARNING! Caps lock is ON</p>
-           </div>
-           <div class="ui field">
+                <input name="username" type="text" class="inputvalues" placeholder="Username" required>
+            </div>
+            <div class="ui field">
+                <label style="font-size: 18px"><b>Password:</label><br>
+                <input name="password" type="password" id="pass1" class="inputvalues" placeholder="Password" required><br>
+                <p id="warning1">WARNING! Caps lock is ON</p>
+            </div>
+            <div class="ui field">
+                <label style="font-size: 18px">Confirm Password</label><br>
+                <input name="cpassword" type="password" id="pass2" class="inputvalues" placeholder="Confirm Password"><br>
+                <p id="warning2">WARNING! Caps lock is ON</p>
+            </div>
+            <div class="ui field">
                 <label style="font-size: 18px">Email</label><br>
-            <input type="text" name="email" required maxlength="30" type="text" placeholder="xyz@gmail.com" class="inputvalues" required><br>
-           </div>
+                <input type="text" name="email" required maxlength="30" type="text" placeholder="xyz@gmail.com" class="inputvalues" required><br>
+            </div>
             <input name="submit_btn" type="submit" class="ui large button fluid purple green" value="Sign Up">
             <p><br><br>
                 <font size="6px"> Already a member? </font><a href="index.php"><input type="button" class="ui large blue button" value="Sign in"></a>
@@ -141,7 +141,6 @@
 	 ?>
     </div>
     <script>
-        
         var input1 = document.getElementById("pass1");
         var input2 = document.getElementById("pass2");
         var text1 = document.getElementById("warning1");

@@ -10,15 +10,17 @@ if(!isset($_SESSION['username']))
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title><?php echo $_SESSION['fullname']." Friend Request" ?></title>
     <link rel="stylesheet" type="text/css" href="css/friend_request1.css">
 </head>
+
 <body>
     <div class="friend-request-container">
         <div class="friend-request-messages">
-           
+
             <?php
                 $username = $_SESSION['username'];
                 $q2="UPDATE `friendrequest` SET seen='1' WHERE receiver='$username'";
@@ -63,6 +65,7 @@ if(!isset($_SESSION['username']))
                 }
             ?>
         </div>
-     </div>
+    </div>
 </body>
+
 </html>

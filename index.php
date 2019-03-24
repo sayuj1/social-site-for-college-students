@@ -8,24 +8,24 @@ require 'dbconfig/config.php';
 <head>
     <title> Login page </title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-   </head>
+</head>
 
 <body style="background-color:#96ceb4;">
-        <div class="ui container">
-              <div class="ui huge label" style="float:left;margin-left: 40%;margin-top: 15%;width: 42%;text-align: center;">
-            Welcome To the Social Site 
+    <div class="ui container">
+        <div class="ui segment raised huge label" style="float:left;margin-left: 40%;margin-top: 15%;width: 42%;text-align: center;">
+            Welcome To the Social Site
         </div>
-        <div class="ui label" style="margin-left: 40%;margin-top: 1%;">
+        <div class="ui segment raised label" style="margin-left: 40%;margin-top: 1%;">
             <center>
                 <h2> Login Page </h2>
                 <img src="imgs/login.png" class="login-img">
             </center>
 
             <form class="myform ui form" action="index.php" method="post">
-               
+
                 <label for="username" style="font-size: 22px;font-weight: bold;"> Username:</label><br>
                 <input name="username" type="text" class="inputvalues" placeholder="Username" required><br><br><br>
                 <label style="font-size: 22px"><b> Password:</b></label>
@@ -33,7 +33,7 @@ require 'dbconfig/config.php';
                 <p id="warning">WARNING! Caps lock is ON.</p>
                 <input name="login" type="submit" class="ui green inverted fluid large button" value="Login" style="margin-top: 5%;"><br>
                 <a href="register.php">
-                <input type="button" class="ui blue inverted fluid large button" value="Register"></a>
+                    <input type="button" class="ui blue inverted fluid large button" value="Register"></a>
 
             </form>
             <?php
@@ -68,8 +68,8 @@ require 'dbconfig/config.php';
 ?>
 
         </div>
-        </div>
-      
+    </div>
+
     <!-- For CapsLock -->
     <script>
         var input = document.getElementById("pass1");

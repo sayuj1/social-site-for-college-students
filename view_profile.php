@@ -92,30 +92,32 @@ if(isset($_POST['comment_sbmt']))
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title><?php echo $row['fullname']." Profile"; ?></title>
     <!-- jQuery library -->
 
 
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/view_profile.css" type="text/css">
-    
-    
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
+
 <body>
-    <?php include 'navbar.php' ?>   
+    <?php include 'navbar.php' ?>
     <div id="result" style="position: absolute; z-index: 99999;background-color:white;margin-top: 0px;">
         <!-- for displaying search result -->
     </div>
-    
+
     <div class="ui segment grid" style="width:90%;margin-left:5%;margin-top:1%;background-color: whitesmoke;">
-       <div class="ui row">
-           <div class="ui four wide column" style="margin-top: 1%;margin-left: 5%;">
-               <img style="width:180px; height: 180px;" class="ui rounded bordered segment green tiny image" src="<?php 
+        <div class="ui row">
+            <div class="ui four wide column" style="margin-top: 1%;margin-left: 5%;">
+                <img style="width:180px; height: 180px;" class="ui rounded bordered segment green tiny image" src="<?php 
 
                     if($row['imagelink']=="uploads/")
                 {
@@ -132,14 +134,14 @@ if(isset($_POST['comment_sbmt']))
                  {
                      echo $row['imagelink'];
                  } ?>" width="150px" height="150px">
-           </div>
+            </div>
             <div class="ui six wide column">
                 <div class="ui header" style="font-size: 60px;margin-top:5%;margin-left:25%;text-transform: Capitalize;">
                     <?php echo $row['fullname'] ?>
-                </div> 
+                </div>
             </div>
-       <div class="ui five wide column" style="margin-top: 10%;">
-       <?php 
+            <div class="ui five wide column" style="margin-top: 10%;">
+                <?php 
         if($current_user!=$username){
         $query="SELECT * FROM `friends` WHERE user='".$current_user."' AND friendname='".$username."' OR user='".$username."' AND friendname='".$current_user."'";
         $rr=mysqli_query($con,$query);
@@ -167,11 +169,11 @@ if(isset($_POST['comment_sbmt']))
         }
     }
     ?>
+            </div>
+        </div>
     </div>
-       </div>
-    </div>
-    
-    
+
+
     <!--+++++++++++++++++ Navbar js ++++++++++++++++++++++++++++++++++-->
     <div class="ui grid" style="margin-top: 4%;">
         <div class="ui row">
@@ -180,35 +182,35 @@ if(isset($_POST['comment_sbmt']))
                     Basic Information
                 </div><br>
                 <div class="ui segments">
-                <div class="ui red segment" style="font-size:25px;">
-                    <strong>Fullname:</strong> 
-                    <span style="margin-left: 5%;text-transform: capitalize;font-weight: 500;float: right;"><?php echo $row['fullname']; ?></span>
-                </div>
-                <div class="ui blue segment" style="font-size:25px;">
-                    <strong>  Username: </strong>
-                  <span style="margin-left: 5%;text-transform: capitalize;font-weight: 500;float: right;">   <?php echo $row['username']; ?></span>
-               </div>
-               <div class="ui green segment" style="font-size:25px;">
-            <strong>   Gender: </strong>&nbsp;&nbsp; &nbsp; 
-               <span style="margin-left: 5%;text-transform: capitalize;font-weight: 500;float: right;"><?php echo $row['gender']; ?></span>
-               </div>
-               <div class="ui yellow segment" style="font-size:25px;">
-               <span class="email1">
-             <strong>  Email: </strong>
-              <span style="margin-left: 5%;font-weight: 500;float: right;"> <?php echo $row['email']; ?></span>
-               </span>
-               </div>
-               <div class="ui purple segment" style="font-size:25px;">
-             <strong>  Contact No :</strong> 
-              <span style="margin-left: 5%;text-transform: capitalize;font-weight: 500;float: right;">  <?php if($row['mobile_no']){
+                    <div class="ui red segment" style="font-size:25px;">
+                        <strong>Fullname:</strong>
+                        <span style="margin-left: 5%;text-transform: capitalize;font-weight: 500;float: right;"><?php echo $row['fullname']; ?></span>
+                    </div>
+                    <div class="ui blue segment" style="font-size:25px;">
+                        <strong> Username: </strong>
+                        <span style="margin-left: 5%;text-transform: capitalize;font-weight: 500;float: right;"> <?php echo $row['username']; ?></span>
+                    </div>
+                    <div class="ui green segment" style="font-size:25px;">
+                        <strong> Gender: </strong>&nbsp;&nbsp; &nbsp;
+                        <span style="margin-left: 5%;text-transform: capitalize;font-weight: 500;float: right;"><?php echo $row['gender']; ?></span>
+                    </div>
+                    <div class="ui yellow segment" style="font-size:25px;">
+                        <span class="email1">
+                            <strong> Email: </strong>
+                            <span style="margin-left: 5%;font-weight: 500;float: right;"> <?php echo $row['email']; ?></span>
+                        </span>
+                    </div>
+                    <div class="ui purple segment" style="font-size:25px;">
+                        <strong> Contact No :</strong>
+                        <span style="margin-left: 5%;text-transform: capitalize;font-weight: 500;float: right;"> <?php if($row['mobile_no']){
                 echo $row['mobile_no']; 
             } 
             else
             { 
                 echo "No Mobile no.";
             }?></span>
-             </div>
-            </div>
+                    </div>
+                </div>
             </div>
             <div class="ui six wide column">
                 <?php
@@ -314,11 +316,11 @@ if(isset($_POST['comment_sbmt']))
             </div>
             <div class="ui" style="width: 22%;margin-left: 5%;">
                 <div class="ui huge segment raised header" style="text-align: center;width: 100%;height: auto;font-size:2.0rem;">
-                   Friend Lists
+                    Friend Lists
                     <div class="ui grid" style="margin-top: 2%;">
                         <div class="ui row" style="text-align:center;">
-                           
-                                 <?php 
+
+                            <?php 
                     $q="SELECT * FROM `friends` WHERE user='".$_SESSION['username']."'";
                     $r=mysqli_query($con,$q);
                     if(mysqli_num_rows($r)>0)
@@ -348,48 +350,46 @@ if(isset($_POST['comment_sbmt']))
                     
     
                     ?>
-                           
+
                         </div>
                     </div>
                 </div>
-	    
+
             </div>
         </div>
     </div>
 
 
     <script>
-    $(document).ready(function(){
-          function load_user(query)
-          {
-                  $.ajax({
-                  url:"profile_user_fetch.php",
-                  method:"post",
-                  data:{query:query},
-                  success:function(data)
-                  {
-                      $('#result').html(data);
-                  }
-              });
-          }
-          $('#search_text').keyup(function(){
-              var search=$(this).val();
-              if(search!='')
-                  {
-                      load_user(search);
-                  }
-              else
-                  {
-                     $('#result').empty();
-                  }
-          });
+        $(document).ready(function() {
+            function load_user(query) {
+                $.ajax({
+                    url: "profile_user_fetch.php",
+                    method: "post",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        $('#result').html(data);
+                    }
+                });
+            }
+            $('#search_text').keyup(function() {
+                var search = $(this).val();
+                if (search != '') {
+                    load_user(search);
+                } else {
+                    $('#result').empty();
+                }
+            });
         });
     </script>
     <script>
-    $(document).ready(function(){
-        $("#myDropdown2").load('friend_request1.php');
-        $('.ui.dropdown').dropdown();
-    });
+        $(document).ready(function() {
+            $("#myDropdown2").load('friend_request1.php');
+            $('.ui.dropdown').dropdown();
+        });
     </script>
 </body>
+
 </html>

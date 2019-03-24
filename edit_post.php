@@ -10,47 +10,49 @@ if(!isset($_SESSION['username']))
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>edit_post</title>
     <link href="css/edit_post.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
+
 <body>
     <div class="ui container">
         <div class="ui raised segment" style="margin-top: 15%;">
-        <form action="edit_post.php" method="post" class="ui form" style="margin-top: 2%;">
-           <div class="ui grid" style="margin-left: 20%;">
-               <div class="eleven wide column">
-                   <div class="field">
-                       <label for="post_title1">
-                           <h2> Post Title: </h2>
-                       </label><br>
-                       <input type="text" name="post_title1" placeholder="Your Post Title...." required>
-                       <?php if(isset($_POST['edit_post']))
+            <form action="edit_post.php" method="post" class="ui form" style="margin-top: 2%;">
+                <div class="ui grid" style="margin-left: 20%;">
+                    <div class="eleven wide column">
+                        <div class="field">
+                            <label for="post_title1">
+                                <h2> Post Title: </h2>
+                            </label><br>
+                            <input type="text" name="post_title1" placeholder="Your Post Title...." required>
+                            <?php if(isset($_POST['edit_post']))
                         {
                         $post_id1 = $_POST['post_id'];
                         }?>
-                        <input type="hidden" name="post_id1" value="<?php echo $post_id1; ?>">
-                   </div><br>
-                   <label for="post_message">
-                       <h2>Post:</h2>
-                   </label><br>
-                   <textarea id="" cols="30" rows="10" placeholder="Type Your Post Here...." name="post_message1" required></textarea> <br><br><br>
-                   <div class="ui icon right input">
-                   <input type="submit" name="submit_post1" value="Edit Post" class="ui massive inverted blue large button">
-                       <i class="edit large blue icon"></i>
-                   </div>
-                   <div class="ui massive button orange large inverted" onclick="window.location.href='post.php'" style="margin-left: 2%;">Click here to go back</div>
-               </div>
-           </div>
-       </form>
+                            <input type="hidden" name="post_id1" value="<?php echo $post_id1; ?>">
+                        </div><br>
+                        <label for="post_message">
+                            <h2>Post:</h2>
+                        </label><br>
+                        <textarea id="" cols="30" rows="10" placeholder="Type Your Post Here...." name="post_message1" required></textarea> <br><br><br>
+                        <div class="ui icon right input">
+                            <input type="submit" name="submit_post1" value="Edit Post" class="ui massive inverted blue large button">
+                            <i class="edit large blue icon"></i>
+                        </div>
+                        <div class="ui massive button orange large inverted" onclick="window.location.href='post.php'" style="margin-left: 2%;">Click here to go back</div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-       
-       <?php 
+
+    <?php 
      if(isset($_POST['submit_post1']))
       {
           $post_id1=$_POST['post_id1'];
@@ -104,7 +106,8 @@ if(!isset($_SESSION['username']))
       }  
       }
     ?>
-   
-    
+
+
 </body>
+
 </html>

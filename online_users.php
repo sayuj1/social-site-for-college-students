@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="css/global_chat.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/global_chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
+
 <body>
-<?php 
+    <?php 
 session_start();
 require 'dbconfig/config.php';
 require 'dbconfig/db_online.php'; //it is just written for practice no need to write here.
 ?>
-<?php 
+    <?php 
 //$users = array();
 if(isset($_SESSION['username'])) //here we are checking whethere a user is logged on or not on the messaging page
 {
@@ -68,5 +70,6 @@ if($count=="0"){
 //mysqli_close($con1);
 }
  ?>
- </body>
+</body>
+
 </html>
